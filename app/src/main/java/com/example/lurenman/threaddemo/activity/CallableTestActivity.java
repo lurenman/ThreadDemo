@@ -71,8 +71,8 @@ public class CallableTestActivity extends Activity {
                     //关闭线程池
                     es.shutdown();
                     try {
-                        Thread.sleep(1000);
-                        Log.e(TAG, "主线程在执行其他任务");
+//                        Thread.sleep(1000);
+//                        Log.e(TAG, "主线程在执行其他任务");
 
                         if (future.get() != null) {
                             //输出获取到的结果
@@ -147,7 +147,7 @@ public class CallableTestActivity extends Activity {
         public Integer call() throws Exception {
             //System.out.println("Callable子线程开始计算啦！");
             Log.e(TAG, "Callable子线程开始计算啦！");
-            Thread.sleep(1000);
+            Thread.sleep(5000);
 
             for (int i = 0; i < 500; i++) {
                 sum = sum + i;

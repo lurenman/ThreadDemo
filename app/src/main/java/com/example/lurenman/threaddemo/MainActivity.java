@@ -10,6 +10,7 @@ import com.example.lurenman.threaddemo.activity.AsyncTaskActivity;
 import com.example.lurenman.threaddemo.activity.CallableTestActivity;
 import com.example.lurenman.threaddemo.activity.ScheduledThreadPoolLActivity;
 import com.example.lurenman.threaddemo.activity.ThreadActivity;
+import com.example.lurenman.threaddemo.activity.ThreadPoolExecutorActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView tv_CallableTest;
     private TextView tv_AsyncTask;
     private TextView tv_thread;
+    private TextView tv_ThreadPoolExecutor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         tv_CallableTest = (TextView) findViewById(R.id.tv_CallableTest);
         tv_AsyncTask = (TextView) findViewById(R.id.tv_AsyncTask);
         tv_thread = (TextView) findViewById(R.id.tv_thread);
+        tv_ThreadPoolExecutor = (TextView) findViewById(R.id.tv_ThreadPoolExecutor);
         initEvents();
     }
 
@@ -55,6 +58,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, ThreadActivity.class);
+                startActivity(intent);
+            }
+        });
+        tv_ThreadPoolExecutor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,ThreadPoolExecutorActivity.class);
                 startActivity(intent);
             }
         });

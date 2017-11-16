@@ -20,6 +20,7 @@
         <activity android:name=".activity.CallableTestActivity" />
         <activity android:name=".activity.AsyncTaskActivity" />
         <activity android:name=".activity.ThreadActivity" />
+        <activity android:name=".activity.ThreadPoolExecutorActivity" />
     </application>
 
 </manifest>

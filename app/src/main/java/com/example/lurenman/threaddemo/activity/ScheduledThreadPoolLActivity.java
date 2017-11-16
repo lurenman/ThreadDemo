@@ -20,12 +20,14 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @author: baiyang.
+ * http://blog.csdn.net/u010687392/article/details/49850803 好文章
+ * http://blog.csdn.net/javazejian/article/details/50890554 好文章
  * Created on 2017/11/6.
  * scheduleAtFixedRate ，是以上一个任务开始的时间计时，period时间过去后，检测上一个任务是否执行完毕，
  * 如果上一个任务执行完毕，则当前任务立即执行，如果上一个任务没有执行完毕，则需要等上一个任务执行完毕后立即执行。
    scheduleWithFixedDelay，是以上一个任务结束时开始计时，period时间过去后，立即执行。
-重点：
-两个方法以不同的时间点作为参考。
+   重点：
+   两个方法以不同的时间点作为参考。
  */
 
 public class ScheduledThreadPoolLActivity extends Activity {
@@ -175,6 +177,6 @@ public class ScheduledThreadPoolLActivity extends Activity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        scheduledThreadPool.shutdown();
+        scheduledThreadPool.shutdownNow();
     }
 }
