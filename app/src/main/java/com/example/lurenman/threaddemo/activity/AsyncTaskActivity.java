@@ -75,7 +75,7 @@ public class AsyncTaskActivity extends Activity implements View.OnClickListener 
             Log.e(TAG, s + "-------" + getNowDate());
             //就像这样要是引用activity的东西就会造成内存泄漏，
             // 所以在activity销毁的时候取消任务，和这个类定义成静态的，都可以防止内存泄漏。
-          //  bt_click.setText(s);
+            //  bt_click.setText(s);
 
         }
 
@@ -115,27 +115,18 @@ public class AsyncTaskActivity extends Activity implements View.OnClickListener 
     protected void onDestroy() {
         super.onDestroy();
         //觉得非空还是判读一下比较好
-        aaaaaaaaa.cancel(true);
-        bbbbbbbbb.cancel(true);
-        ccccccccc.cancel(true);
-        ddddddddd.cancel(true);
-//        if (aaaaaaaaa!=null)
-//        {
-//            aaaaaaaaa.cancel(true);
-//        }
-//        if (bbbbbbbbb!=null)
-//        {
-
-//            bbbbbbbbb.cancel(true);
-//        }
-//        if (ccccccccc!=null)
-//        {
-//            ccccccccc.cancel(true);
-//        }
-//        if (ddddddddd!=null)
-//        {
-//            ddddddddd.cancel(true);
-//        }
+        if (aaaaaaaaa != null) {
+            aaaaaaaaa.cancel(true);
+        }
+        if (bbbbbbbbb != null) {
+            bbbbbbbbb.cancel(true);
+        }
+        if (ccccccccc != null) {
+            ccccccccc.cancel(true);
+        }
+        if (ddddddddd != null) {
+            ddddddddd.cancel(true);
+        }
 
     }
 }

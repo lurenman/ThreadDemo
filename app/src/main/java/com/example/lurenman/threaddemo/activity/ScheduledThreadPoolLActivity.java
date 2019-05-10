@@ -25,9 +25,9 @@ import java.util.concurrent.TimeUnit;
  * Created on 2017/11/6.
  * scheduleAtFixedRate ，是以上一个任务开始的时间计时，period时间过去后，检测上一个任务是否执行完毕，
  * 如果上一个任务执行完毕，则当前任务立即执行，如果上一个任务没有执行完毕，则需要等上一个任务执行完毕后立即执行。
-   scheduleWithFixedDelay，是以上一个任务结束时开始计时，period时间过去后，立即执行。
-   重点：
-   两个方法以不同的时间点作为参考。
+ * scheduleWithFixedDelay，是以上一个任务结束时开始计时，period时间过去后，立即执行。
+ * 重点：
+ * 两个方法以不同的时间点作为参考。
  */
 
 public class ScheduledThreadPoolLActivity extends Activity {
@@ -53,8 +53,8 @@ public class ScheduledThreadPoolLActivity extends Activity {
             public void onClick(View view) {
                 if (!isClick1) {
                     isClick1 = true;
-                 //   ScheduledThreadPoolExecutor se = new ScheduledThreadPoolExecutor(5);
-                      scheduledThreadPool = Executors.newScheduledThreadPool(5);
+                    //   ScheduledThreadPoolExecutor se = new ScheduledThreadPoolExecutor(5);
+                    scheduledThreadPool = Executors.newScheduledThreadPool(5);
                     try {
                         //schedule to run after sometime
                         // System.out.println("Current Time = "+getNowDate());
@@ -66,7 +66,7 @@ public class ScheduledThreadPoolLActivity extends Activity {
                             scheduledThreadPool.schedule(worker, 2, TimeUnit.SECONDS);
 
                         }
-                      //  Thread.sleep(1000);
+                        //  Thread.sleep(1000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -77,8 +77,8 @@ public class ScheduledThreadPoolLActivity extends Activity {
                         //wait for all tasks to finish
                     }
                     //System.out.println("Finished all threads");
-                    Log.e(TAG, "Finished all threads"+getNowDate());
-                }else {
+                    Log.e(TAG, "Finished all threads" + getNowDate());
+                } else {
                     Toast.makeText(getApplicationContext(), "button1已经点击了", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -87,21 +87,21 @@ public class ScheduledThreadPoolLActivity extends Activity {
         bt_scheduleAtFixedRate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!isClick2)
-                {  isClick2=true;
+                if (!isClick2) {
+                    isClick2 = true;
                     ScheduledThreadPoolExecutor se = new ScheduledThreadPoolExecutor(2);
                     // 设定可以循环执行的runnable,初始延迟为0，这里设置的任务的间隔为2秒
-                    for(int i=0;i<2;i++){
+                    for (int i = 0; i < 2; i++) {
                         //这个一直循环执行我。。。
                         se.scheduleAtFixedRate(new FixedSchedule(), 0, 2, TimeUnit.SECONDS);
-                       // se.scheduleWithFixedDelay(new FixedSchedule(), 0, 2, TimeUnit.SECONDS);
+                        // se.scheduleWithFixedDelay(new FixedSchedule(), 0, 2, TimeUnit.SECONDS);
                     }
                     //当任务没有终止的时候
                     while (!se.isTerminated()) {
                         //wait for all tasks to finish
-                       // Log.e(TAG,"------------------------------------------");
+                        // Log.e(TAG,"------------------------------------------");
                     }
-                }else {
+                } else {
                     Toast.makeText(getApplicationContext(), "button2已经点击了", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -131,10 +131,11 @@ public class ScheduledThreadPoolLActivity extends Activity {
             }
         }
     }
+
     public class FixedSchedule implements Runnable {
         @Override
         public void run() {
-            Log.e(TAG,"当前线程："+Thread.currentThread().getName()+"  当前时间："+getNowDate());
+            Log.e(TAG, "当前线程：" + Thread.currentThread().getName() + "  当前时间：" + getNowDate());
         }
     }
 
@@ -176,7 +177,8 @@ public class ScheduledThreadPoolLActivity extends Activity {
 
     @Override
     protected void onDestroy() {
+        if (scheduledThreadPool != null)
+            scheduledThreadPool.shutdownNow();
         super.onDestroy();
-        scheduledThreadPool.shutdownNow();
     }
 }

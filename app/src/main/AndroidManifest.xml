@@ -21,6 +21,9 @@
         <activity android:name=".activity.AsyncTaskActivity" />
         <activity android:name=".activity.ThreadActivity" />
         <activity android:name=".activity.ThreadPoolExecutorActivity" />
+        <activity android:name=".activity.LockActivity" />
+        <activity android:name=".activity.ReentrantLockActivity" />
+        <activity android:name=".activity.InterruptActivity" />
     </application>
 
 </manifest>
