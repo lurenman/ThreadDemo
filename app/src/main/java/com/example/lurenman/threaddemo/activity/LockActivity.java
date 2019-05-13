@@ -15,6 +15,7 @@ public class LockActivity extends BaseNewActivity {
 
     private Button btn_reentrant_lock;
     private Button btn_interrupt;
+    private Button btn_future_task;
 
     @NonNull
     @Override
@@ -31,6 +32,7 @@ public class LockActivity extends BaseNewActivity {
     protected void initView() {
         btn_reentrant_lock = (Button) findViewById(R.id.btn_reentrant_lock);
         btn_interrupt = (Button) findViewById(R.id.btn_interrupt);
+        btn_future_task = (Button) findViewById(R.id.btn_future_task);
     }
 
     @Override
@@ -51,6 +53,13 @@ public class LockActivity extends BaseNewActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LockActivity.this, InterruptActivity.class);
+                startActivity(intent);
+            }
+        });
+        btn_future_task.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LockActivity.this, FutureTaskActivity.class);
                 startActivity(intent);
             }
         });
