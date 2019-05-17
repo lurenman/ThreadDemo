@@ -24,5 +24,23 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:text="FutureTask测试" />
+    <Button
+        android:id="@+id/btn_handler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="handler复习测试" />
+    <Button
+        android:id="@+id/btn_handlerthread"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="handlerthread复习测试" />
+    <Button
+        android:id="@+id/btn_IntentService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="handlerthread复习测试" />
 
 </LinearLayout>

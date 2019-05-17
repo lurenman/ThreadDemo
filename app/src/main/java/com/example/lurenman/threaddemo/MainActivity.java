@@ -9,7 +9,6 @@ import android.widget.TextView;
 
 import com.example.lurenman.threaddemo.activity.AsyncTaskActivity;
 import com.example.lurenman.threaddemo.activity.CallableTestActivity;
-import com.example.lurenman.threaddemo.activity.LockActivity;
 import com.example.lurenman.threaddemo.activity.ScheduledThreadPoolLActivity;
 import com.example.lurenman.threaddemo.activity.ThreadActivity;
 import com.example.lurenman.threaddemo.activity.ThreadPoolExecutorActivity;
@@ -21,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView tv_AsyncTask;
     private TextView tv_thread;
     private TextView tv_ThreadPoolExecutor;
-    private TextView tv_threadlock;
+    private TextView tv_main1;
     private Context mContext;
 
     @Override
@@ -34,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         tv_AsyncTask = (TextView) findViewById(R.id.tv_AsyncTask);
         tv_thread = (TextView) findViewById(R.id.tv_thread);
         tv_ThreadPoolExecutor = (TextView) findViewById(R.id.tv_ThreadPoolExecutor);
-        tv_threadlock = (TextView) findViewById(R.id.tv_threadlock);
+        tv_main1 = (TextView) findViewById(R.id.tv_main1);
         initEvents();
     }
 
@@ -74,10 +73,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        tv_threadlock.setOnClickListener(new View.OnClickListener() {
+        tv_main1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mContext, LockActivity.class);
+                Intent intent = new Intent(mContext, MainActivity1.class);
                 startActivity(intent);
             }
         });

@@ -21,10 +21,15 @@
         <activity android:name=".activity.AsyncTaskActivity" />
         <activity android:name=".activity.ThreadActivity" />
         <activity android:name=".activity.ThreadPoolExecutorActivity" />
-        <activity android:name=".activity.LockActivity" />
+        <activity android:name=".MainActivity1" />
         <activity android:name=".activity.ReentrantLockActivity" />
         <activity android:name=".activity.InterruptActivity" />
         <activity android:name=".activity.FutureTaskActivity" />
+        <activity android:name=".activity.HandlerActivity" />
+        <activity android:name=".activity.HandlerThreadActivity" />
+        <activity android:name=".activity.IntentServiceActivity" />
+
+        <service android:name=".service.MyIntentService" />
     </application>
 
 </manifest>
