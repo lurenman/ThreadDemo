@@ -28,8 +28,18 @@
         <activity android:name=".activity.HandlerActivity" />
         <activity android:name=".activity.HandlerThreadActivity" />
         <activity android:name=".activity.IntentServiceActivity" />
+        <activity android:name=".activity.AidlActivity" />
 
         <service android:name=".service.MyIntentService" />
+        <!--android:process=":remote"-->
+        <service
+            android:name=".service.AidlTestService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.lrm.aidl" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

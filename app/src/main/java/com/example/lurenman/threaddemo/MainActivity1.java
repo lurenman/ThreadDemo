@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.lurenman.threaddemo.R;
+import com.example.lurenman.threaddemo.activity.AidlActivity;
 import com.example.lurenman.threaddemo.activity.BaseNewActivity;
 import com.example.lurenman.threaddemo.activity.FutureTaskActivity;
 import com.example.lurenman.threaddemo.activity.HandlerActivity;
@@ -28,6 +29,7 @@ public class MainActivity1 extends BaseNewActivity {
     private Button btn_handlerthread;
     private Context mContext;
     private Button btn_IntentService;
+    private Button btn_aidl;
 
     @NonNull
     @Override
@@ -48,6 +50,7 @@ public class MainActivity1 extends BaseNewActivity {
         btn_handler = (Button) findViewById(R.id.btn_handler);
         btn_handlerthread = (Button) findViewById(R.id.btn_handlerthread);
         btn_IntentService = (Button) findViewById(R.id.btn_IntentService);
+        btn_aidl = (Button) findViewById(R.id.btn_aidl);
     }
 
     @Override
@@ -91,6 +94,12 @@ public class MainActivity1 extends BaseNewActivity {
             @Override
             public void onClick(View v) {
                 startLocalActivity(IntentServiceActivity.class);
+            }
+        });
+        btn_aidl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startLocalActivity(AidlActivity.class);
             }
         });
 
