@@ -29,6 +29,7 @@
         <activity android:name=".activity.HandlerThreadActivity" />
         <activity android:name=".activity.IntentServiceActivity" />
         <activity android:name=".activity.AidlActivity" />
+        <activity android:name=".activity.JionYieldSleepActivity" />
 
         <service android:name=".service.MyIntentService" />
         <!--android:process=":remote"-->

@@ -1,52 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:paddingLeft="18dp"
-    android:paddingRight="18dp">
+    android:fillViewport="true">
 
-    <Button
-        android:id="@+id/btn_reentrant_lock"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="ReentrantLock（重入锁)" />
-    <Button
-        android:id="@+id/btn_interrupt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="interrupt线程中断测试" />
-    <Button
-        android:id="@+id/btn_future_task"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="FutureTask测试" />
-    <Button
-        android:id="@+id/btn_handler"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="handler复习测试" />
-    <Button
-        android:id="@+id/btn_handlerthread"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="handlerthread复习测试" />
-    <Button
-        android:id="@+id/btn_IntentService"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="handlerthread复习测试" />
-    <Button
-        android:id="@+id/btn_aidl"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="aidl复习测试" />
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingBottom="30dp"
+        android:paddingLeft="18dp"
+        android:paddingRight="18dp"
+        android:paddingTop="30dp">
 
-</LinearLayout>
+        <Button
+            android:id="@+id/btn_reentrant_lock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ReentrantLock（重入锁)" />
+
+        <Button
+            android:id="@+id/btn_interrupt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="interrupt线程中断测试" />
+
+        <Button
+            android:id="@+id/btn_future_task"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="FutureTask测试" />
+
+        <Button
+            android:id="@+id/btn_handler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="handler复习测试" />
+
+        <Button
+            android:id="@+id/btn_handlerthread"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="handlerthread复习测试" />
+
+        <Button
+            android:id="@+id/btn_IntentService"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="handlerthread复习测试" />
+
+        <Button
+            android:id="@+id/btn_aidl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="aidl复习测试" />
+
+        <Button
+            android:id="@+id/btn_jion_yield_sleep"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="jion_yield_sleep复习测试" />
+    </LinearLayout>
+
+
+</ScrollView>

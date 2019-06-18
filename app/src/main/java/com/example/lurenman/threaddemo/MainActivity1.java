@@ -14,6 +14,7 @@ import com.example.lurenman.threaddemo.activity.HandlerActivity;
 import com.example.lurenman.threaddemo.activity.HandlerThreadActivity;
 import com.example.lurenman.threaddemo.activity.IntentServiceActivity;
 import com.example.lurenman.threaddemo.activity.InterruptActivity;
+import com.example.lurenman.threaddemo.activity.JionYieldSleepActivity;
 import com.example.lurenman.threaddemo.activity.ReentrantLockActivity;
 
 /**
@@ -30,6 +31,7 @@ public class MainActivity1 extends BaseNewActivity {
     private Context mContext;
     private Button btn_IntentService;
     private Button btn_aidl;
+    private Button btn_jion_yield_sleep;
 
     @NonNull
     @Override
@@ -51,6 +53,7 @@ public class MainActivity1 extends BaseNewActivity {
         btn_handlerthread = (Button) findViewById(R.id.btn_handlerthread);
         btn_IntentService = (Button) findViewById(R.id.btn_IntentService);
         btn_aidl = (Button) findViewById(R.id.btn_aidl);
+        btn_jion_yield_sleep = (Button) findViewById(R.id.btn_jion_yield_sleep);
     }
 
     @Override
@@ -100,6 +103,12 @@ public class MainActivity1 extends BaseNewActivity {
             @Override
             public void onClick(View v) {
                 startLocalActivity(AidlActivity.class);
+            }
+        });
+        btn_jion_yield_sleep.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startLocalActivity(JionYieldSleepActivity.class);
             }
         });
 
